@@ -37,7 +37,9 @@ function submitData (name, email) {
     body: JSON.stringify(name,email),
 })
 .then(res => res.json())
-.then(data => console.log(data))
+.then(object => {document.body.innerHTML = object["id"];})
 
-.catch(error => console.log(error.message))
+.catch(error => {document.body.innerHTML = error.message;});
 }
+
+submitData()
